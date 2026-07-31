@@ -3,7 +3,14 @@ from uuid import uuid4, UUID
 from fastapi import FastAPI, HTTPException
 from models import User, Gender, Role, UpdateUser
 
-app = FastAPI()
+app = FastAPI(
+    title="Fast API CRUD operations",
+    description="Fast API for creating API CRUD operations for names, gender and roles",
+    version="1.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    contact={"name":"Segun"}
+)
 
 db: List[User] = [
     User(id=UUID("18c8fd11-cf70-47d6-917e-9a1f282af29d"), 
